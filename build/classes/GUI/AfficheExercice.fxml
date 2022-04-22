@@ -175,13 +175,14 @@
           <RowConstraints maxHeight="467.1999908447266" minHeight="10.0" prefHeight="416.00001831054686" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TableView fx:id="tableexercice" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="900.0" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
+            <TableView maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="400.0" prefWidth="900.0" GridPane.rowIndex="1" GridPane.vgrow="ALWAYS">
               <columns>
-                <TableColumn fx:id="idex" prefWidth="75.0" text="ID" />
-                <TableColumn fx:id="nomex" prefWidth="75.0" text="Nom Exercice" />
-                  <TableColumn fx:id="dureex" prefWidth="75.0" text="dure exercice" />
-                  <TableColumn fx:id="descex" prefWidth="75.0" text="description exercice" />
-                  <TableColumn fx:id="cat" prefWidth="75.0" text="category" />
+                <TableColumn prefWidth="75.0" text="ID" />
+                <TableColumn prefWidth="75.0" text="Nom Activity" />
+                  <TableColumn prefWidth="75.0" text="date" />
+                  <TableColumn prefWidth="75.0" text="Temp" />
+                  <TableColumn prefWidth="75.0" text="description" />
+                  <TableColumn prefWidth="75.0" text="nombre de place" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
@@ -193,8 +194,7 @@
                      <HBox.margin>
                         <Insets left="40.0" />
                      </HBox.margin></TextField>
-                  <Button mnemonicParsing="false" onAction="#addEx" prefHeight="26.0" prefWidth="127.0" text="Add Exercice" />
-                  <Button mnemonicParsing="false" onAction="#modifex" text="modifier" />
+                  <Button mnemonicParsing="false" onAction="#addAct" prefHeight="26.0" prefWidth="127.0" text="Add Exercice" />
                </children>
             </HBox>
          </children>

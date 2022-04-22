@@ -190,12 +190,11 @@
             </TableView>
             <HBox prefHeight="46.0" prefWidth="766.0" spacing="10.0">
                <children>
-                  <TextField fx:id="search" onInputMethodTextChanged="#searchh" prefHeight="26.0" prefWidth="368.0" promptText="Search...">
+                  <TextField fx:id="search" prefHeight="26.0" prefWidth="368.0" promptText="Search...">
                      <HBox.margin>
                         <Insets left="40.0" />
                      </HBox.margin></TextField>
                   <Button mnemonicParsing="false" onAction="#goAddActivite" prefHeight="26.0" prefWidth="127.0" text="Add Activity" />
-                  <Button mnemonicParsing="false" onAction="#But_ModifAbon" text="modifier" />
                </children>
             </HBox>
          </children>

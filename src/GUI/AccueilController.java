@@ -48,11 +48,11 @@ public class AccueilController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-        Media media =new Media ("file:///C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/img/bg.mp4");  //badel path mta3 video
+    /*  Media media =new Media ("file:///C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/img/bg.mp4");  //badel path mta3 video
         MediaPlayer player = new MediaPlayer(media);
         mediaView.setMediaPlayer(player);
         player.setVolume(0);
-        player.play();
+        player.play();*/
     }    
     
 }
