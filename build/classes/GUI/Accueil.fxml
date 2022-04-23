@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuButton?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.effect.BoxBlur?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.MotionBlur?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.input.KeyCodeCombination?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" style="-fx-background-color: Black;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AccueilController">
+    <stylesheets>
+        <URL value="@accueil.css" />
+    </stylesheets>
+   <children>
+      <ImageView fitHeight="72.0" fitWidth="98.0" layoutX="14.0" layoutY="12.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../img/Logo.png" />
+         </image>
+      </ImageView>
+      <Label layoutX="132.0" layoutY="17.0" prefHeight="44.0" prefWidth="514.0" text="MBODY DESKTOP APPLICATION" textFill="#c6c319" wrapText="true">
+         <font>
+            <Font name="Arial Narrow Bold" size="37.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DISAPPEAR" />
+         </cursor>
+      </Label>
+      <MenuButton layoutX="1111.0" layoutY="39.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="129.0" style="-fx-background-color: gold;" text="Connecté" textAlignment="CENTER">
+        <items>
+          <MenuItem style="-fx-background-color: gold;" text="Profile" />
+          <MenuItem style="-fx-background-color: gold;" text="Settings">
+               <accelerator>
+                  <KeyCodeCombination alt="UP" code="ACCEPT" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
+               </accelerator>
+            </MenuItem>
+            <MenuItem mnemonicParsing="false" style="-fx-background-color: gold;" text="Reclamation" />
+        </items>
+         <font>
+            <Font name="Arial Narrow" size="15.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="DEFAULT" />
+         </cursor>
+         <padding>
+            <Insets left="30.0" top="5.0" />
+         </padding>
+      </MenuButton>
+      <SplitPane layoutY="99.0" prefHeight="789.0" prefWidth="1240.0" style="-fx-background-color: Black;">
+        <items>
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="787.0" prefWidth="1411.0" style="-fx-background-color: black;">
+               <children>
+                  <TabPane layoutX="5.0" layoutY="4.0" prefHeight="780.0" prefWidth="1224.0" style="-fx-background-color: Gold;" tabClosingPolicy="UNAVAILABLE" tabMinHeight="95.0" tabMinWidth="185.0">
+                    <tabs>
+                      <Tab closable="false" style="-fx-background-color: Gold;" text="Accueil">
+                        <content>
+                              <ScrollPane hmax="3.0" vmax="3.0">
+                                 <content>
+                                <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="797.0" prefWidth="1214.0" style="-fx-background-color: black;">
+                                       <children>
+                                          <MediaView fx:id="mediaView" fitHeight="200.0" fitWidth="200.0" layoutX="522.0" layoutY="406.0" style="-fx-scale-x: 7; -fx-scale-y: 5;">
+                                             <cursor>
+                                                <Cursor fx:constant="CLOSED_HAND" />
+                                             </cursor>
+                                             <effect>
+                                                <MotionBlur angle="55.06" />
+                                             </effect></MediaView>
+                                          <Label layoutX="264.0" layoutY="114.0" text="Welcome To MbodyUp " textFill="#ffee01">
+                                             <font>
+                                                <Font name="Symbol" size="70.0" />
+                                             </font>
+                                             <effect>
+                                                <Lighting>
+                                                   <bumpInput>
+                                                      <BoxBlur />
+                                                   </bumpInput>
+                                                   <light>
+                                                      <Light.Distant />
+                                                   </light>
+                                                </Lighting>
+                                             </effect>
+                                          </Label>
+                                          <Separator layoutX="-1.0" layoutY="411.0" prefHeight="36.0" prefWidth="1211.0" />
+                                       </children>
+                                    </AnchorPane>
+                                 </content>
+                              </ScrollPane>
+                        </content>
+                      </Tab>
+                        <Tab fx:id="PffresPane" style="-fx-background-color: Gold;" text="Offres ">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                        <Tab fx:id="AboonementsPane" style="-fx-background-color: Gold;" text="Abonnements">
+                           <content>
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                        <Tab fx:id="AcitivitéPane1" style="-fx-background-color: gold;" text="Activité">
+                           <content>
+                              <AnchorPane fx:id="ActivitéPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                        <Tab fx:id="AcitivitéPane11" style="-fx-background-color: gold;" text="Coach">
+                           <content>
+                              <AnchorPane fx:id="CoachPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                        <Tab fx:id="AcitivitéPane111" closable="false" style="-fx-background-color: Gold;" text="Reclamation ">
+                           <content>
+                              <AnchorPane fx:id="ReclamtionPanel1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
+                      <Tab fx:id="ProcductsPane" closable="false" style="-fx-background-color: Gold;" text="Products">
+                        <content>
+                          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                        </content>
+                      </Tab>
+                    </tabs>
+                  </TabPane>
+               </children>
+            </AnchorPane>
+        </items>
+      </SplitPane>
+   </children>
+</AnchorPane>
