@@ -3,36 +3,37 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AjouterAct.fxml</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/mbodyupjava/MbodyUpjava.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/DashboardFrontController.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AfficheExercice.fxml</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/style.css</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/CalndController.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/mbodyupjava/FXMain.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/item.fxml</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AfficheActbackController.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AdminDashboardController.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AjouterEx.fxml</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/entities/Activitie.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AfficheActback.fxml</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/entities/Category.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/ModifierActController.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/entities/Exercice.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/Calnd.fxml</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/testt.fxml</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AjouterExController.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AfficheExerciceController.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/entities/Calendar.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AjouterActController.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/services/CatService.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/services/ImageActService.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/ModifierExController.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/modifierAct.fxml</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/services/ActivityService.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/modifierEx.fxml</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/services/ExerciceService.java</file>
-            <file>file:/C:/Users/oussa/OneDrive/Documents/NetBeansProjects/MbodyUpjava/src/GUI/ItemController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/DashboardFront.fxml</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/ModifierActController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/services/IExercice.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/services/CatService.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/AfficheActback.fxml</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/AfficheExercice.fxml</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/services/UserService.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/entities/Activitie.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/entities/Exercice.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/ModifierExController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/item.fxml</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/AfficheExerciceController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/services/ImageActService.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/style.css</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/testt.fxml</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/entities/Category.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/AjouterActController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/AfficheActbackController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/modifierAct.fxml</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/ItemController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/DashboardFrontController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/AjouterAct.fxml</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/modifierEx.fxml</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/AjouterExController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/services/ExerciceService.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/services/ActivityService.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/DashCss.css</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/entities/ImageAct.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/entities/users.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/AdminDashboardController.java</file>
+            <file>file:/C:/Users/oussa/OneDrive/Desktop/MbodyUpjava/src/GUI/AjouterEx.fxml</file>
         </group>
     </open-files>
 </project-private>
