@@ -13,8 +13,7 @@
       <VBox layoutX="-1.0" layoutY="-2.0" prefHeight="687.0" prefWidth="986.0">
          <children>
             <Pane prefHeight="20.0" prefWidth="1094.0" />
-            <Pane prefHeight="94.0" prefWidth="882.0" style="-fx-background-color: orange;" />
-            <ScrollPane prefHeight="578.0" prefWidth="986.0">
+            <ScrollPane prefHeight="659.0" prefWidth="986.0">
                <content>
                   <GridPane fx:id="grid" hgap="200.0" prefHeight="571.0" prefWidth="982.0" vgap="70.0">
                     <columnConstraints>

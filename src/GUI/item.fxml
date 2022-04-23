@@ -11,16 +11,16 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="474.0" prefWidth="273.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ItemController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="524.0" prefWidth="275.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ItemController">
    <children>
-      <VBox fx:id="chosenFruitCard" alignment="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="462.0" prefWidth="262.0" stylesheets="@style.css">
+      <VBox fx:id="chosenFruitCard" alignment="CENTER" layoutX="6.0" layoutY="104.0" prefHeight="462.0" prefWidth="262.0" stylesheets="@style.css" AnchorPane.bottomAnchor="6.0" AnchorPane.topAnchor="40.0">
          <children>
             <ImageView fx:id="fruitImg" fitHeight="200.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
                <VBox.margin>
                   <Insets top="20.0" />
                </VBox.margin>
                <image>
-                  <Image url="@../../../../../Pictures/275516516_505116264500431_5100677554933577062_n.jpg" />
+                  <Image url="@../img/empty.jpg" />
                </image>
             </ImageView>
             <HBox alignment="CENTER" prefHeight="53.0" prefWidth="335.0">
@@ -52,8 +52,8 @@
             </Button>
          </children>
          <styleClass>
-            <String fx:value="chosen-fruit-card" />
             <String fx:value="shadow" />
+            <String fx:value="chosen-fruit-card" />
          </styleClass>
       </VBox>
    </children>

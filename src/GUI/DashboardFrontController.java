@@ -41,7 +41,11 @@ public class DashboardFrontController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
-           int column = 0;
+      allact();
+    }    
+    public void allact(){
+    
+             int column =0;
         int row = 1;
         ActivityService actS = new ActivityService();
         try {
@@ -68,6 +72,7 @@ public class DashboardFrontController implements Initializable {
                        ItemController itemController = fxmlLoader.getController();
                        itemController.safe(la.get(i));
                        
+                       
                        if (column == 3) {
                            column = 0;
                            row++;
@@ -93,6 +98,6 @@ public class DashboardFrontController implements Initializable {
         } catch (IOException e) {
             System.out.println(e);;
         }
-    }    
+    }
     
 }
