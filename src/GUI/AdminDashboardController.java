@@ -5,9 +5,11 @@
  */
 package GUI;
 
+import entities.Activitie;
 import java.awt.Button;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.ResourceBundle;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -23,9 +25,17 @@ import javafx.scene.chart.PieChart;
 import javafx.scene.chart.XYChart;
 import javafx.scene.control.Label;
 import javafx.scene.control.TextField;
-import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Pane;
 import javafx.stage.Stage;
+import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
+import java.time.format.TextStyle;
+import java.util.Locale;
+import java.time.DayOfWeek;
+import java.util.List;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import services.ActivityService;
 
 /**
  * FXML Controller class
@@ -43,10 +53,21 @@ public class AdminDashboardController implements Initializable {
      Scene scene ;
     @FXML
     private Pane addbutton;
+    //*********new********
     @FXML
     private LineChart<?, ?> lineChart;
     @FXML
     private PieChart pieChart;
+    
+    ActivityService actS = new ActivityService();
+   
+    
+    
+    
+    //*************
+    
+    
+    
      
   
  
@@ -175,16 +196,58 @@ public class AdminDashboardController implements Initializable {
      
     }
     
-    private void iniLineChart(){
+    private void iniLineChart() {
+        
     
         XYChart.Series series = new XYChart.Series();
-        series.getData().add(new XYChart.Data("Monday",8));
-        series.getData().add(new XYChart.Data("tuesday",12));
-        series.getData().add(new XYChart.Data("aaa",7));
-        series.getData().add(new XYChart.Data("bbb",10));
-        series.getData().add(new XYChart.Data("dd",6));
-        series.getData().add(new XYChart.Data("cc",9));
-        series.getData().add(new XYChart.Data("nnn",10));
+        int mon=0;
+        int tu=0;
+        int we=0;
+        int th=0;
+        int fr=0;
+        int sa=0;
+        int su=0;
+        try {
+            List<Activitie> actList = actS.afficheractivities();
+            for(Activitie a : actList){
+               
+                String year = a.getDate_Act().split("-")[0];
+                String mot =a.getDate_Act().split("-")[1];
+                String jour =a.getDate_Act().split("-")[2];
+                String dt = jour+"/"+mot+"/"+year;
+                 DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d/M/yyyy");
+                LocalDate date = LocalDate.parse(dt, formatter); // LocalDate = 2010-02-23
+                DayOfWeek dow = date.getDayOfWeek();  // Extracts a `DayOfWeek` enum object.
+                 String output = dow.getDisplayName(TextStyle.SHORT, Locale.US);
+                 if(output.equals("Mon")){mon+=actS.countparticipation(a.getId());}
+                 if(output.equals("Tue")){tu+=actS.countparticipation(a.getId());}
+                 if(output.equals("Wed")){we+=actS.countparticipation(a.getId());}
+                 if(output.equals("Thu")){th+=actS.countparticipation(a.getId());}
+                 if(output.equals("Fri")){fr+=actS.countparticipation(a.getId());}
+                 if(output.equals("Sat")){sa+=actS.countparticipation(a.getId());}
+                 if(output.equals("Sun")){su+=actS.countparticipation(a.getId());}
+                
+            }
+            
+            
+            
+            
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+        
+     
+    
+        
+        
+        
+        series.getData().add(new XYChart.Data("Monday",mon));
+        series.getData().add(new XYChart.Data("tuesday",tu));
+        series.getData().add(new XYChart.Data("wednesday",we));
+        series.getData().add(new XYChart.Data("thursday",th));
+        series.getData().add(new XYChart.Data("friday",fr));
+        series.getData().add(new XYChart.Data("saturday",sa));
+        series.getData().add(new XYChart.Data("sunday",su));
         lineChart.getData().addAll(series);
         lineChart.lookup(".chart-plot-background").setStyle("-fx-background-color:transparent");
         series.getNode().setStyle("-fx-stroke:#FFD6DC");

@@ -8,6 +8,7 @@ package services;
 import entities.Activitie;
 import entities.Exercice;
 import entities.ImageAct;
+import entities.Rate;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -182,4 +183,47 @@ public class ActivityService  {
     
     return last;
     }
+      public int countparticipation(int id ) throws SQLException{
+    int last = 0;
+     String req = "select count(*) from activity_user where activity_id="+id;
+        
+        stm = connexion.createStatement();
+        //ensemble de resultat
+        ResultSet rst = stm.executeQuery(req);
+        while (rst.next()) {
+        last = rst.getInt("count(*)");
+            
+        
+        }
+    
+    return last;
+    }
+      
+         public void participe(Rate r) throws SQLException {
+        
+        String req = "INSERT INTO `rating` (`rate`, `id_activity_id`, `iduser_id`) "
+                + "VALUES ( ?, ?,?) ";
+        PreparedStatement ps = connexion.prepareStatement(req);
+        ps.setInt(1, r.getRating());
+        ps.setInt(2, r.getId_act());
+        ps.setInt(3, r.getId_use());
+        
+        ps.executeUpdate();
+         }
+         
+       public int rated(int idact , int iduser ) throws SQLException{
+    int last = 0;
+     String req = "select * from rating where id_activity_id='"+idact+"' and iduser_id ='"+iduser+"'";
+        
+        stm = connexion.createStatement();
+        //ensemble de resultat
+        ResultSet rst = stm.executeQuery(req);
+        while (rst.next()) {
+        last = rst.getInt("rate");
+            
+        
+        }
+    
+    return last;
+    }   
 }

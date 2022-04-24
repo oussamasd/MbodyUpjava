@@ -8,6 +8,7 @@ package GUI;
 import entities.Activitie;
 import entities.ImageAct;
 import java.io.File;
+import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.List;
@@ -16,12 +17,17 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 /**
  * FXML Controller class
@@ -45,10 +51,13 @@ public class ItemController  {
     private Label catact;
     @FXML
     private Label descact;
+    
+    Activitie ac ;
 
     
     
    public void safe(Activitie act){
+       ac=act;
        nomAct.setText(act.getNom_Act());
        dtact.setText(act.getDate_Act());
        catact.setText(act.getCategory().getNom_Cat());
@@ -92,7 +101,20 @@ public class ItemController  {
 
     @FXML
     private void showMore(ActionEvent event) {
-        System.out.println("hihi");
+        
+        try{
+           FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/DetailAct.fxml"));
+                 Parent root = loader.load();
+                 DetailActController mdc = loader.getController();
+                 mdc.safeAct(ac);
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 Scene scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
     }
     
 }
