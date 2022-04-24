@@ -5,6 +5,7 @@
  */
 package entities;
 
+import javafx.scene.chart.PieChart;
 import javafx.scene.image.ImageView;
 
 /**
@@ -111,6 +112,10 @@ public class Abonnement {
     @Override
     public String toString() {
         return id+"_"+ nom;
+    }
+
+    public void add(PieChart.Data data) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
      
 }

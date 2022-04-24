@@ -92,8 +92,12 @@ import javafx.application.Application;
 import javafx.geometry.Side;
 import javafx.scene.Scene;
 import javafx.scene.chart.PieChart;
+import javafx.scene.chart.PieChart.Data;
+import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.StackPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 /**
  * FXML Controller class
  *
@@ -104,8 +108,7 @@ public class AfficherAbonneController extends AdminDashboardController {
     public String imagecomp; 
                Integer idd;
      Connection connexion;
-
-
+    Statement stm;
           Abonnement a=new Abonnement();
 
     @FXML
@@ -163,8 +166,11 @@ public class AfficherAbonneController extends AdminDashboardController {
     private Button qr;
     @FXML
     private Button tri;
+    private PieChart piechart;
+    private ObservableList<Data> Data;
     @FXML
-    private TextField rech;
+    private Button staat;
+    
     /**
      * Initializes the controller class.
      */
@@ -504,6 +510,62 @@ public class AfficherAbonneController extends AdminDashboardController {
        
         //tababon.setItems((ObservableList<Abonnement>) ps.tri());
     }
- 
-  
+  /* @FXML
+    private void abonfront(ActionEvent event) throws IOException {
+        
+          Abonnement r =  tababon.getSelectionModel().getSelectedItem();
+       FXMLLoader loader = new FXMLLoader(getClass().getResource("Acceuil.fxml"));
+
+  Stage stage = new Stage(StageStyle.DECORATED.DECORATED);
+  stage.setScene(
+    new Scene(loader.load()));
+
+   AccueilController controller = loader.getController();
+  controller.abonfront(r);
+   stage.show();
+    }
+   
+ */ 
+    /*private void stat(ActionEvent event) {
+               
+      try {
+           
+            String query = "SELECT COUNT(*),categories FROM abonnement GROUP BY categories" ;
+
+             PreparedStatement PreparedStatement = connexion.prepareStatement(query);
+                     PreparedStatement pst=connexion.prepareStatement(query);
+
+             ResultSet rst= PreparedStatement.executeQuery();
+           
+            while (rst.next()){               
+               a.add(new PieChart.Data(rst.getString("categories"),rst.getInt("COUNT(*)")));
+            }     
+        } catch (SQLException ex) {
+            Logger.getLogger(AfficherAbonneController.class.getName()).log(Level.SEVERE, null, ex);
+        }
+      
+        piechart.setTitle("**Statistiques nombres des catégories**");
+        piechart.setLegendSide(Side.LEFT);
+        piechart.setData(Data);
+        
+    }*/
+    @FXML
+    private void StatistiqueAbo(ActionEvent event) throws SQLException, IOException {
+      try {
+            AbonnementService bs = new AbonnementService();
+        List<Abonnement> Abonnements = bs.afficherAbonnement();
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("StaticsAbonnement.fxml"));
+           AnchorPane rootLayout = (AnchorPane) loader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            Scene scene = new Scene(rootLayout);
+            stage.setScene(scene);
+            stage.show();
+       } catch (IOException ex) {
+           System.out.println(ex.getMessage());
+        } 
+    }
+
+   
 }

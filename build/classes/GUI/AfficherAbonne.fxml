@@ -243,11 +243,11 @@
                            <font>
                               <Font size="13.0" />
                            </font></Button>
-                        <Button fx:id="qr" layoutX="506.0" layoutY="171.0" mnemonicParsing="false" onAction="#generateqr" style="-fx-background-color: #ffbbbb;" text="Génerer QR" textFill="WHITE">
+                        <Button fx:id="tri" layoutX="645.0" layoutY="9.0" mnemonicParsing="false" onAction="#triabonnombtn" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: #ffbbbb;" text="tri par nom" textFill="WHITE">
                            <font>
                               <Font size="13.0" />
                            </font></Button>
-                        <Button fx:id="tri" layoutX="645.0" layoutY="9.0" mnemonicParsing="false" onAction="#triabonnombtn" prefHeight="29.0" prefWidth="89.0" style="-fx-background-color: #ffbbbb;" text="tri par nom" textFill="WHITE">
+                        <Button fx:id="staat" layoutX="505.0" layoutY="169.0" mnemonicParsing="false" onAction="#StatistiqueAbo" style="-fx-background-color: #ffbbbb;" text="Statistique" textFill="WHITE">
                            <font>
                               <Font size="13.0" />
                            </font></Button>

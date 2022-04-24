@@ -15,6 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.chart.PieChart;
 import utils.MyDB;
 
 /**
@@ -24,6 +25,8 @@ import utils.MyDB;
 public class AbonnementService {
     Connection connexion;
     Statement stm;
+    private int nb1, nb2, nb3, nb4;
+
     
     public AbonnementService() {
         connexion = MyDB.getInstance().getConnexion();
@@ -188,5 +191,48 @@ public class AbonnementService {
             list.add(a);
        }     
        return list;
+    }
+           public int pendingType() throws SQLException {
+        String req = "SELECT count(id) from abonnement where categories ='simple';";
+        
+           stm = connexion.createStatement();
+       //rs=ste.executeQuery(req); 
+         ResultSet rst = stm.executeQuery(req);
+    
+
+        while (rst.next()) {
+            nb1 = rst.getInt(1);
+        }
+        return nb1;
+    }
+       public int confirmedType() throws SQLException {
+        String req = "SELECT count(id) from abonnement where categories ='couple';";
+        
+        stm = connexion.createStatement();
+       //rs=ste.executeQuery(req); 
+         ResultSet rst = stm.executeQuery(req);
+
+        while (rst.next()) {
+            nb2 = rst.getInt(1);
+        }
+        return nb2;
+    }
+       public int cancelledType() throws SQLException {
+        //String req = "SELECT COUNT(*),categories FROM abonnement GROUP BY categories";
+               String req = "SELECT count(id) from abonnement where categories ='enfant';";
+
+         stm = connexion.createStatement();
+       //rs=ste.executeQuery(req); 
+         ResultSet rst = stm.executeQuery(req);
+         
+        while (rst.next()) {
+            nb3 = rst.getInt(1);
+            
+        }
+        return nb3;
+    }
+
+    public void add(PieChart.Data data) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

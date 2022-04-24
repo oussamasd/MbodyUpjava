@@ -129,8 +129,7 @@ OffreService servoff = new OffreService();
     private Button excel;
     @FXML
     private Button imp;
-    @FXML
-    private Button qr;
+   
    
     
 @Override
@@ -170,9 +169,7 @@ OffreService servoff = new OffreService();
         delai.setCellValueFactory(new PropertyValueFactory<>("delai"));
         nomoff.setCellValueFactory(new PropertyValueFactory<>("nom"));
         descoff.setCellValueFactory(new PropertyValueFactory<>("description"));
-       //   nom_abon_offre.setCellValueFactory(new PropertyValueFactory<>("nom_abonnement_id"));
-     
-      //  refreshTable();
+      
          if(la!=null){
         
         refreshTable(la);
@@ -196,12 +193,13 @@ OffreService servoff = new OffreService();
   if( Validchamp(onom) &&  Validchamp(odesc)){  
     Offre o = new Offre();
     
-        //o.getAbonnement(Integer.parseInt(nomabon.getText()));
-        // o.getAbonnement();
         o.setDescription(odesc.getText());
         o.setNom(onom.getText());
         o.setDelai(odelai.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
-       // o.setAbonnement(nomabon.getText());
+       // o.setAbonnement(descoff1.getText());
+         // o.setAbonnement(Integer.parseInt(descoff1.getText()));
+        
+       
         OffreService sp1 = new OffreService();
         try {
           sp1.ajouterOffreOF(o);
@@ -450,6 +448,50 @@ public  void searchact(){
              System.out.println(ex);
          }  
    
+    }
+
+    @FXML
+    private void goAccueil(ActionEvent event) {
+    }
+
+    @FXML
+    private void goUser(ActionEvent event) {
+    }
+
+    @FXML
+    private void goActivite(ActionEvent event) {
+    }
+
+    @FXML
+    private void goExercice(ActionEvent event) {
+    }
+
+    @FXML
+    private void goAbonnement(ActionEvent event) {
+    }
+
+    @FXML
+    private void goProduit(ActionEvent event) {
+    }
+
+    @FXML
+    private void goCAtmehdi(ActionEvent event) {
+    }
+
+    @FXML
+    private void goReclamation(ActionEvent event) {
+    }
+
+    @FXML
+    private void goTypeReclamation(ActionEvent event) {
+    }
+
+    @FXML
+    private void goEntraineur(ActionEvent event) {
+    }
+
+    @FXML
+    private void goCatAymen(ActionEvent event) {
     }
 
  }

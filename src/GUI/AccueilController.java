@@ -9,6 +9,8 @@ import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.Label;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.media.Media;
@@ -45,6 +47,18 @@ public class AccueilController implements Initializable {
     private AnchorPane ReclamtionPanel1;
     @FXML
     private Tab ProcductsPane;
+    @FXML
+    private Label nom_lab;
+    @FXML
+    private Label cat_lab;
+    @FXML
+    private Label des_lab;
+    @FXML
+    private Label prix_lab;
+    @FXML
+    private Label img_lab;
+    @FXML
+    private Button but_retour;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
