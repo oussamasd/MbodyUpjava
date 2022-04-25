@@ -41,6 +41,7 @@ import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Map;
 import java.util.List;
+import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -98,6 +99,10 @@ import javafx.scene.layout.StackPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 /**
  * FXML Controller class
  *
@@ -163,13 +168,12 @@ public class AfficherAbonneController extends AdminDashboardController {
     @FXML
     private Button pdf;
     @FXML
-    private Button qr;
-    @FXML
     private Button tri;
     private PieChart piechart;
     private ObservableList<Data> Data;
     @FXML
     private Button staat;
+  
     
     /**
      * Initializes the controller class.
@@ -216,7 +220,20 @@ public class AfficherAbonneController extends AdminDashboardController {
      
     @FXML
     private void AjouterAbonn(ActionEvent event) throws AWTException {
-         if( Validchamp(tnom) &&  Validchamp(Acat) &&  Validchamp(Adesc)){  
+     //    if( Validchamp(tnom) &&  Validchamp(Acat) &&  Validchamp(Adesc))
+     if(tnom.getText().equals("") || Acat.getText().equals("")||Aprix.getText().equals("")||Adesc.getText().equals("")){
+            JOptionPane.showMessageDialog(null, "veuillez remplir les champs vides");}
+         else if(!(Acat.getText().matches("^[a-zA-Z]+$"))) {
+
+            JOptionPane.showMessageDialog(null, "verifier la catégorie");
+             }
+            else if (!(Aprix.getText().matches("^[0-9]+$"))){
+                     JOptionPane.showMessageDialog(null, "Le prix est non Valide");}
+        
+           else{
+
+      
+           
 
     Abonnement a = new Abonnement();
 
@@ -298,7 +315,7 @@ public class AfficherAbonneController extends AdminDashboardController {
              loadDate();
 
     }
-        private boolean Validchamp(TextField T){
+       /* private boolean Validchamp(TextField T){
          if(T.getText().isEmpty() | T.getLength() <4 ){ //verifier nom o deesc vide 
           Alert alert = new Alert(Alert.AlertType.WARNING);
             alert.setTitle("Erreur de formulaire");
@@ -307,7 +324,7 @@ public class AfficherAbonneController extends AdminDashboardController {
             alert.showAndWait();
       return false;
     }return true;
-}
+}*/
         @FXML
     private void But_ModifAbon(ActionEvent event) {
         
@@ -445,8 +462,12 @@ public class AfficherAbonneController extends AdminDashboardController {
             alert.setContentText("Cannot export data!");
             alert.show();
         }
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+                alert.setContentText("PDF Créé");
+                JOptionPane.showMessageDialog(null, "PDF Créé");
+
     }
-@FXML
     private void generateqr(ActionEvent event) throws SQLException {
         AbonnementService ps = new AbonnementService();
 

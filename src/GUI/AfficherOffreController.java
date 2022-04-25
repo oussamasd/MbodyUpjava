@@ -31,6 +31,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Properties;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -68,6 +69,10 @@ import javafx.scene.layout.Pane;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import javax.imageio.ImageIO;
+import javax.mail.Message;
+import javax.mail.Session;
+import javax.mail.internet.InternetAddress;
+import javax.mail.internet.MimeMessage;
 import javax.swing.JOptionPane;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import static org.apache.poi.hssf.usermodel.HeaderFooter.file;
@@ -129,6 +134,11 @@ OffreService servoff = new OffreService();
     private Button excel;
     @FXML
     private Button imp;
+
+    @FXML
+    private TextField Email;
+   
+   
    
    
     
@@ -136,7 +146,6 @@ OffreService servoff = new OffreService();
     public void initialize(URL url, ResourceBundle rb)
     
  {
-     
      
      nom_abon_offre.setItems(OffList);
 
@@ -159,10 +168,7 @@ OffreService servoff = new OffreService();
             
             
          taboff.setItems(OffList);
-        
-        
-        
-        
+         
     }
      private void loadDate(List<Offre> la) {
         id_off.setCellValueFactory(new PropertyValueFactory<>("id"));
@@ -199,10 +205,11 @@ OffreService servoff = new OffreService();
        // o.setAbonnement(descoff1.getText());
          // o.setAbonnement(Integer.parseInt(descoff1.getText()));
         
-       
+
         OffreService sp1 = new OffreService();
         try {
           sp1.ajouterOffreOF(o);
+          sendMail();
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
           alert.setTitle("Nouvelle offre");
           alert.setHeaderText(null);
@@ -374,6 +381,10 @@ OffreService servoff = new OffreService();
                     row.createCell(j).setCellValue("");
                 }   
             }
+             Alert alert = new Alert(Alert.AlertType.INFORMATION);
+
+                alert.setContentText("EXCEL Créé");
+                JOptionPane.showMessageDialog(null, "EXCEL Créé");
         }
       // FileOutputStream fileOut = new FileOutputStream("Classeur1.xlsx");
             FileOutputStream fileOut = new FileOutputStream(new File ("D:\\test.xls"));
@@ -450,49 +461,79 @@ public  void searchact(){
    
     }
 
-    @FXML
-    private void goAccueil(ActionEvent event) {
+    public void sendMail(){
+      try{
+           String host ="smtp.gmail.com" ;
+            String user = "celestialservice489@gmail.com";
+            String pass = "celestialgroup98";
+            String to =Email.getText();
+            String from ="msmoudihadil9@gmail.com";
+            String subject = null;
+            String  messageText = null;
+            //equals("mauvaise")
+            if(FindTextLine()){
+           // if (description_reclamation.getText().matches("mauvaise")) {
+            subject = "Offre ajouté ";
+             messageText= "MbodUp Groupe\n Cher,client," +
+                    "On a une offre sur nos abonnements .\n"
+                   + "profitez bien."
+                   + "" + "En vous souhaitant une agréable journée\n\n MbodyUp Group \n\n"
+                       +odesc.getText()+"-Cordialement-\n";
+            
+            }
+            boolean sessionDebug = false;
+
+            Properties props = System.getProperties();
+
+            props.put("mail.smtp.ssh.enable", "true");
+            props.put("mail.smtp.host", host);
+            props.put("mail.smtp.port", "587");
+            props.put("mail.smtp.auth", "true");
+            props.put("mail.smtp.starttls.required", "true");
+
+            java.security.Security.addProvider(new com.sun.net.ssl.internal.ssl.Provider());
+            Session mailSession = Session.getDefaultInstance(props, null);
+            mailSession.setDebug(sessionDebug);
+            Message msg = new MimeMessage(mailSession);
+            msg.setFrom(new InternetAddress(from));
+            InternetAddress[] address = {new InternetAddress(to)};
+            msg.setRecipients(Message.RecipientType.TO, address);
+            msg.setSubject(subject); msg.setSentDate(new java.util.Date());
+            msg.setText(messageText);
+           javax.mail.Transport transport=mailSession.getTransport("smtp");
+           transport.connect(host, user, pass);
+           transport.sendMessage(msg, msg.getAllRecipients());
+           transport.close();
+           System.out.println("message send successfully");
+        }catch(Exception ex)
+        {
+            System.out.println(ex.getMessage());
+        
+        
+        
+        
+    }
     }
 
-    @FXML
-    private void goUser(ActionEvent event) {
+    public TextField getEmail() {
+        return Email;
     }
 
-    @FXML
-    private void goActivite(ActionEvent event) {
+    public void setEmail(TextField Email) {
+        this.Email = Email;
     }
+        public boolean FindTextLine(){
+        String[] words = {"mauvaise", "mauvais","insatisfait","décu"};
+        String experience_des = odesc.getText();
+        CharSequence c = words.toString();
+        if(experience_des.contains(c)){
+            //System.out.println("");     
+        
+        return false;
+    }return true;
+        
+}
 
-    @FXML
-    private void goExercice(ActionEvent event) {
-    }
-
-    @FXML
-    private void goAbonnement(ActionEvent event) {
-    }
-
-    @FXML
-    private void goProduit(ActionEvent event) {
-    }
-
-    @FXML
-    private void goCAtmehdi(ActionEvent event) {
-    }
-
-    @FXML
-    private void goReclamation(ActionEvent event) {
-    }
-
-    @FXML
-    private void goTypeReclamation(ActionEvent event) {
-    }
-
-    @FXML
-    private void goEntraineur(ActionEvent event) {
-    }
-
-    @FXML
-    private void goCatAymen(ActionEvent event) {
-    }
 
  }
     
