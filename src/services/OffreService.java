@@ -36,13 +36,13 @@ public class OffreService {
 
     }
       public void ajouterOffreOF(Offre o) throws SQLException {
-        String req = "INSERT INTO `offre` ( `delai`, `nom`, `description`) "
-                + "VALUES (? ,?, ?) ";
+        String req = "INSERT INTO `offre` (`nom_abonnement_id` ,`delai`, `nom`, `description`) "
+                + "VALUES (? ,?, ?,?) ";
         PreparedStatement ps = connexion.prepareStatement(req);
-       // ps.setInt(1,o.getAbonnement());
-        ps.setString(1, o.getDelai());
-        ps.setString(2, o.getNom());
-        ps.setString(3, o.getDescription());
+        ps.setInt(1,o.getAbonnement());
+        ps.setString(2, o.getDelai());
+        ps.setString(3, o.getNom());
+        ps.setString(4, o.getDescription());
        
         ps.executeUpdate();
     }
@@ -56,7 +56,7 @@ public class OffreService {
         while (rst.next()) {
            Offre o = new Offre();
            
-         //  o.setAbonnement(rst.getInt("nom_abonnement_id"));
+           o.setAbonnement(rst.getInt("nom_abonnement_id"));
            o.setDescription(rst.getString("description"));
            o.setId(rst.getInt("id"));
            o.setDelai(rst.getString("delai"));

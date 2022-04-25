@@ -203,7 +203,9 @@ OffreService servoff = new OffreService();
         o.setNom(onom.getText());
         o.setDelai(odelai.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
        // o.setAbonnement(descoff1.getText());
-         // o.setAbonnement(Integer.parseInt(descoff1.getText()));
+        //  o.setAbonnement(Integer.parseInt(descoff1.getText()));
+          o.setAbonnement(Integer.parseInt(nom_abon_offre.getValue().toString().split("_")[0]));
+         
         
 
         OffreService sp1 = new OffreService();
