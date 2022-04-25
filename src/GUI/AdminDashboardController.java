@@ -54,11 +54,31 @@ public class AdminDashboardController implements Initializable {
     }
       @FXML
     private void addAct(ActionEvent event) {
-      
+       // FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AjouterPFXML.fxml"));
+       /* try {
+            Parent root = loader.load();
+            AjouterPFXMLController controller = loader.getController();
+            controller.SetUsername(tusername.getText());
+            tusername.getScene().setRoot(root);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }*/
+       System.out.println(search.getText());
     }
       @FXML
     private void goActivite(ActionEvent event) {
-      
+        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AfficheActback.fxml"));
+        try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficheActback.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
          
          
         
@@ -67,7 +87,17 @@ public class AdminDashboardController implements Initializable {
     }
      @FXML
     private void goExercice(ActionEvent event) {
-         
+          try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficheExercice.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
       
      
     }
@@ -90,20 +120,48 @@ public class AdminDashboardController implements Initializable {
      @FXML
     private void goProduit(ActionEvent event) {
         titrepage.setText("goProduit");
+        try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficherProduit.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }     
       
      
     }
         @FXML
     private void goCAtmehdi(ActionEvent event) {
-        titrepage.setText("goCAtmehdi");
-     
+  try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficherCategories.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }     
     }
      @FXML
     private void goReclamation(ActionEvent event) {
-        titrepage.setText("goReclamation");
+          try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficherReclamation.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
       
      
-    }
+    }}
         @FXML
     private void goTypeReclamation(ActionEvent event) {
         titrepage.setText("goTypeReclamation");
