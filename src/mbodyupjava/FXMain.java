@@ -26,7 +26,7 @@ public class FXMain extends Application {
     public void start(Stage primaryStage) {
        this.stage = primaryStage;
         try {
-            parent = FXMLLoader.load(getClass().getResource("/GUI/Accueil.fxml"));
+            parent = FXMLLoader.load(getClass().getResource("/GUI/AdminDashboard.fxml"));
             Scene scene = new Scene(parent);
             stage.setTitle("MbodyUP");
             stage.setScene(scene);
