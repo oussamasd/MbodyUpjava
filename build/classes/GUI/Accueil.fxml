@@ -67,7 +67,7 @@
       </MenuButton>
       <SplitPane layoutY="99.0" prefHeight="789.0" prefWidth="1240.0" style="-fx-background-color: Black;">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="787.0" prefWidth="1411.0" style="-fx-background-color: black;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: black;">
                <children>
                   <TabPane layoutX="5.0" layoutY="4.0" prefHeight="780.0" prefWidth="1224.0" style="-fx-background-color: Gold;" tabClosingPolicy="UNAVAILABLE" tabMinHeight="95.0" tabMinWidth="185.0">
                     <tabs>

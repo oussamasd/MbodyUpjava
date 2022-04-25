@@ -137,6 +137,10 @@ OffreService servoff = new OffreService();
 
     @FXML
     private TextField Email;
+    @FXML
+    private Button tfEmail;
+    @FXML
+    private TableColumn<Offre, Integer> id_abon;
    
    
    
@@ -175,6 +179,8 @@ OffreService servoff = new OffreService();
         delai.setCellValueFactory(new PropertyValueFactory<>("delai"));
         nomoff.setCellValueFactory(new PropertyValueFactory<>("nom"));
         descoff.setCellValueFactory(new PropertyValueFactory<>("description"));
+        id_abon.setCellValueFactory(new PropertyValueFactory<>("abonnement"));
+
       
          if(la!=null){
         
@@ -204,7 +210,7 @@ OffreService servoff = new OffreService();
         o.setDelai(odelai.getValue().format(DateTimeFormatter.ofPattern("yyyy-MM-dd")));
        // o.setAbonnement(descoff1.getText());
         //  o.setAbonnement(Integer.parseInt(descoff1.getText()));
-          o.setAbonnement(Integer.parseInt(nom_abon_offre.getValue().toString().split("_")[0]));
+        o.setAbonnement(Integer.parseInt(nom_abon_offre.getValue().toString().split("_")[0]));
          
         
 
@@ -287,6 +293,7 @@ OffreService servoff = new OffreService();
    
     @FXML
     private void selectA(MouseEvent event) {
+        
        Offre o = taboff.getSelectionModel().getSelectedItem();
 
      
@@ -535,7 +542,6 @@ public  void searchact(){
     }return true;
         
 }
-
 
  }
     

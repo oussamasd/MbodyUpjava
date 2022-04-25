@@ -6,6 +6,8 @@
 package GUI;
 
 import entities.Abonnement;
+import entities.Offre;
+
 import entities.Activitie;
 import entities.ImageAct;
 import java.io.File;
@@ -54,18 +56,20 @@ public class Item_Front_Controller  {
     private Label descact;
     
     Activitie ac ;
+    @FXML
+    private Label prixab;
 
     
     
    public void safe(Abonnement act){
        
        nomAct.setText(act.getNom());
-     //  dtact.setText(act.getDate_Act);
-      // catact.setText(act.getCategory().getNom_Cat());
-       descact.setText(act.getDescription());
+     //dtact.setText(act.getDate_Act);
+       descact.setText(act.getDescription()); 
        dtact.setText(act.getCategorie());
+     // prixab.setText(Float.parseFloat(act.getPrix()));
+       prixab.setText(String.valueOf(act.getPrix()));
 
-       
        if(act.getPhoto()!=null){
           
           File file = new File(act.getPhoto());
@@ -101,22 +105,5 @@ public class Item_Front_Controller  {
 
    
 
-    @FXML
-    private void showMore(ActionEvent event) {
-        
-      /*  try{
-           FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/DetailAct.fxml"));
-                 Parent root = loader.load();
-                 DetailActController mdc = loader.getController();
-                 mdc.safeAct(ac);
-                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
-                 Scene scene = new Scene(root);
-                 stage.setScene(scene);
-                 stage.show();
-        }catch(IOException ex){
-            System.out.println(ex);
-        
-        }*/
-    }
     
 }

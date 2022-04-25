@@ -154,17 +154,6 @@
                   <Font size="16.0" />
                </font>
             </Button>
-            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goCatAymen" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Category Entraineur" textFill="WHITE">
-               <opaqueInsets>
-                  <Insets />
-               </opaqueInsets>
-               <padding>
-                  <Insets left="50.0" />
-               </padding>
-               <font>
-                  <Font size="16.0" />
-               </font>
-            </Button>
          </children>
       </VBox>
       <GridPane fx:id="ll" layoutX="299.0" layoutY="183.0" prefHeight="470.0" prefWidth="766.0">
@@ -251,6 +240,11 @@
                            <font>
                               <Font size="13.0" />
                            </font></Button>
+                        <Button fx:id="front" layoutX="-268.0" layoutY="441.0" mnemonicParsing="false" onAction="#Front" style="-fx-background-color: #345665;" text="Front Abonnement" textFill="WHITE">
+                           <font>
+                              <Font size="16.0" />
+                           </font>
+                        </Button>
                      </children>
                   </AnchorPane>
                </children>

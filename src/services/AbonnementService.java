@@ -106,7 +106,7 @@ public class AbonnementService {
         stm.executeUpdate(req);*/
     }
  public void ModifierAbonnementAb(Abonnement a) throws SQLException {
-          String req = "UPDATE `abonnement` SET `nom`='"+a.getNom()+"',`categories`='"+a.getCategorie()+"',`description`='"+a.getDescription()+"',`prix`='"+a.getPrix()+"' WHERE id= "+a.getId();
+          String req = "UPDATE `abonnement` SET `nom`='"+a.getNom()+"',`categories`='"+a.getCategorie()+"',`description`='"+a.getDescription()+"',`prix`='"+a.getPrix()+"',`photo`='"+a.getPhoto()+"' WHERE id= "+a.getId();
         PreparedStatement ps = connexion.prepareStatement(req);
        
         ps.executeUpdate();

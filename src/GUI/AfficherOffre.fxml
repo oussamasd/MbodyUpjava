@@ -183,6 +183,7 @@
                 <TableColumn fx:id="delai" prefWidth="75.0" text="Delai" />
                   <TableColumn fx:id="nomoff" prefWidth="75.0" text="Nom" />
                   <TableColumn fx:id="descoff" prefWidth="75.0" text="Description" />
+                  <TableColumn fx:id="id_abon" prefWidth="75.0" text="Id_Abonnement" />
               </columns>
                <columnResizePolicy>
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />

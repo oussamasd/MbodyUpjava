@@ -173,6 +173,8 @@ public class AfficherAbonneController extends AdminDashboardController {
     private ObservableList<Data> Data;
     @FXML
     private Button staat;
+    @FXML
+    private Button front;
   
     
     /**
@@ -211,7 +213,8 @@ public class AfficherAbonneController extends AdminDashboardController {
         prix.setCellValueFactory(new PropertyValueFactory<>("prix"));
         categories.setCellValueFactory(new PropertyValueFactory<>("categorie"));
         description.setCellValueFactory(new PropertyValueFactory<>("description"));
-      photo.setCellValueFactory(new PropertyValueFactory<>("photo"));
+        photo.setCellValueFactory(new PropertyValueFactory<>("photo"));
+     
 
            
        // photo.setCellValueFactory(new PropertyValueFactory<Abonnement, ImageView>("imgv"));
@@ -243,8 +246,7 @@ public class AfficherAbonneController extends AdminDashboardController {
         a.setPrix(Float.parseFloat(Aprix.getText()));
         a.setPhoto(imagecomp);
         AbonnementService sp = new AbonnementService();
-        try {
-          sp.ajouterAbonnement(a);
+        try {          sp.ajouterAbonnement(a);
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
           alert.setTitle("Nouvelle abonnemet");
           alert.setHeaderText(null);
@@ -284,7 +286,7 @@ public class AfficherAbonneController extends AdminDashboardController {
             if (responce==JOptionPane.YES_OPTION){
            AbonnementService so = new AbonnementService();
                     Abonnement a = (Abonnement) tababon.getSelectionModel().getSelectedItem();
-                     so.SupprimerAbonnement(a);
+                    so.SupprimerAbonnement(a);
              //refresh(true);
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
@@ -336,6 +338,7 @@ public class AfficherAbonneController extends AdminDashboardController {
         a.setDescription(Adesc.getText());
         a.setPrix(Float.parseFloat(Aprix.getText()));
         a.setPhoto(imagecomp);
+        
         AbonnementService sp = new AbonnementService();
         try {
 
@@ -588,5 +591,21 @@ public class AfficherAbonneController extends AdminDashboardController {
         } 
     }
 
-   
+ @FXML
+    private void Front(ActionEvent event) throws SQLException, IOException {
+      try {
+           
+        FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(getClass().getResource("Accueil.fxml"));
+           AnchorPane rootLayout = (AnchorPane) loader.load();
+            Stage stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            Scene scene = new Scene(rootLayout);
+            stage.setScene(scene);
+            stage.show();
+       } catch (IOException ex) {
+           System.out.println(ex.getMessage());
+        } 
+    }
+
 }
