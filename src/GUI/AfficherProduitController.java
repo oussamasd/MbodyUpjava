@@ -29,6 +29,11 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.print.PageLayout;
+import javafx.print.PageOrientation;
+import javafx.print.Paper;
+import javafx.print.Printer;
+import javafx.print.PrinterJob;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
@@ -86,6 +91,8 @@ public class AfficherProduitController extends AdminDashboardController {
     private ComboBox nom_cat_id;
     @FXML
     private TextField Email;
+    @FXML
+    private Button exportPDF;
 
 
     public AfficherProduitController() {
@@ -297,31 +304,27 @@ tquantite.textProperty().addListener(new ChangeListener<String>()
     private void BtnSuppRec(ActionEvent event) throws SQLException {
          if (tableact.getSelectionModel().isEmpty() ){
         Alert alert = new Alert(Alert.AlertType.INFORMATION);
-        JOptionPane.showMessageDialog(null,"Aucune Categories est selectionné ,veuillez choisir une Categories");
+        JOptionPane.showMessageDialog(null,"Aucune Categories est selectionné ,veuillez choisir une Produit");
      }else{
-   int responce=JOptionPane.showConfirmDialog(null, "Attention vous allez supprimer l'Categories sélectionné etes-vous sur ?","Suppression",JOptionPane.YES_NO_OPTION);
+   int responce=JOptionPane.showConfirmDialog(null, "Attention vous allez supprimer l'Produit sélectionné etes-vous sur ?","Suppression",JOptionPane.YES_NO_OPTION);
             if (responce==JOptionPane.YES_OPTION){
            ProduitService so = new ProduitService();
                     Produit a = (Produit) tableact.getSelectionModel().getSelectedItem();
-                     so.SupprimerCategories(a);
+                     so.SupprimerProduit(a);
              //refresh(true);
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
 
-         alert.setContentText("Votre Categories a été bien supprimé");
+         alert.setContentText("Votre Produit a été bien supprimé");
                   JOptionPane.showMessageDialog(null,"Categories supprimé");
 
             } else{
                 Alert alert = new Alert(Alert.AlertType.INFORMATION);
-            alert.setContentText("Votre Categories a été bien supprimé");
+            alert.setContentText("Votre Produit a été bien supprimé");
                  JOptionPane.showMessageDialog(null,"Suppression annulé");
             }
            SystemTray tray = SystemTray.getSystemTray();
 
-        //If the icon is a file
-             java.awt.Image image = Toolkit.getDefaultToolkit().createImage("icon.png");
-        //Alternative (if the icon is on the classpath):
-        //Image image = Toolkit.getToolkit().createImage(getClass().getResource("icon.png"));
-
+        
        
         
     }
@@ -340,7 +343,7 @@ tquantite.textProperty().addListener(new ChangeListener<String>()
         ProduitService sp = new ProduitService();
         try {
 
-            sp.ModifierCategories(a);
+            sp.ModifierProduit(a);
             Alert alert = new Alert(Alert.AlertType.INFORMATION);
             alert.show();
             alert.setTitle("Modifier !");
@@ -372,7 +375,7 @@ tquantite.textProperty().addListener(new ChangeListener<String>()
         ProduitService sp = new ProduitService();
         try {
             sendMail();
-          sp.ajouterCategoriesCa(a);
+          sp.ajouterProduitP(a);
           Alert alert = new Alert(Alert.AlertType.INFORMATION);
           alert.setTitle("Nouvelle Categories");
           alert.setHeaderText(null);
@@ -552,13 +555,32 @@ tquantite.textProperty().addListener(new ChangeListener<String>()
     @FXML
     private void goCatAymen(ActionEvent event) {
     }
+    
+    
+            @FXML
+    private void exportPDF(ActionEvent event) {
+        
+      PrinterJob job = PrinterJob.createPrinterJob();
+       
+        Node root= this.tableact;
+        
+     if(job != null){
+     job.showPrintDialog(root.getScene().getWindow()); // Window must be your main Stage
+     Printer printer = job.getPrinter();
+     PageLayout pageLayout = printer.createPageLayout(Paper.A3, PageOrientation.LANDSCAPE, Printer.MarginType.HARDWARE_MINIMUM);
+     boolean success = job.printPage(pageLayout, root);
+     if(success){
+        job.endJob();
+     }
+   }
+    }
  public void sendMail(){
       try{
            String host ="smtp.gmail.com" ;
-            String user = "celestialservice489@gmail.com";
-            String pass = "celestialgroup98";
+            String user = "mehdi.azzaz20@gmail.com";
+            String pass = "nosforever24552201";
             String to =Email.getText();
-            String from ="msmoudihadil9@gmail.com";
+            String from ="mehdi.azzaz20@gmail.com";
             String subject = null;
             String  messageText = null;
             //equals("mauvaise")
@@ -566,7 +588,7 @@ tquantite.textProperty().addListener(new ChangeListener<String>()
            // if (description_reclamation.getText().matches("mauvaise")) {
             subject = "Offre ajouté ";
              messageText= "MbodUp Groupe\n Cher,client," +
-                    "On a une offre sur nos abonnements .\n"
+                    "On un nouveau produit.\n"
                    + "profitez bien."
                    + "" + "En vous souhaitant une agréable journée\n\n MbodyUp Group \n\n"
                        +tnom.getText()+"-Cordialement-\n";

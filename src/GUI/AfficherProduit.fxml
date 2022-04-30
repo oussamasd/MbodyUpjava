@@ -228,6 +228,7 @@
             <ImageView fx:id="imagefield" fitHeight="150.0" fitWidth="200.0" layoutX="684.0" layoutY="307.0" pickOnBounds="true" preserveRatio="true" />
             <ComboBox fx:id="nom_cat_id" layoutX="307.0" layoutY="426.0" prefWidth="150.0" />
             <TextField fx:id="Email" layoutX="434.0" layoutY="202.0" />
+            <Button fx:id="exportPDF" layoutX="911.0" layoutY="187.0" mnemonicParsing="false" onAction="#exportPDF" text="PDF" />
          </children>
       </AnchorPane>
    </children>

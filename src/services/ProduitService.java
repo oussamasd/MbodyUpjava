@@ -35,7 +35,7 @@ public class ProduitService {
         stm.executeUpdate(req);
 
     }
-      public void ajouterCategoriesCa(Produit c) throws SQLException {
+      public void ajouterProduitP(Produit c) throws SQLException {
         String req = "INSERT INTO `produits` ( `nom`, `prix`, `quantite`,`photo` ,`nom_cat_id`) "
                 + "VALUES (? ,?, ?, ?,?) ";
         PreparedStatement ps = connexion.prepareStatement(req);
@@ -75,7 +75,7 @@ public class ProduitService {
         }
         return categorieses;
     }
-         public void SupprimerCategories(Produit o) throws SQLException {
+         public void SupprimerProduit(Produit o) throws SQLException {
     
               String req ="delete from produits where id= ?";
 
@@ -86,12 +86,22 @@ public class ProduitService {
   
      
     }
-          public void ModifierCategories(Produit o) throws SQLException {
+          public void ModifierProduit(Produit o) throws SQLException {
           String req = "UPDATE `produits` SET `nom`='"+o.getNom()+"',`prix`='"+o.getPrix()+"',`quantite`='"+o.getQuantite()+"' WHERE id= "+o.getId();
         PreparedStatement ps = connexion.prepareStatement(req);
         ps.executeUpdate();
     }
           
            
-         
+       public void SupprimerProduitaAll(Produit o) throws SQLException {
+    
+              String req ="delete from produits where id > 0";
+
+        PreparedStatement pst=connexion.prepareStatement(req);
+             int id = o.getId();
+             pst.setInt(1,id);
+             pst.executeUpdate();
+  
+     
+    }   
 }

@@ -181,7 +181,7 @@ public class AdminDashboardController implements Initializable {
         @FXML
     private void goAccueil(ActionEvent event) {
          try{
-                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AdminDashboard.fxml"));
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/Accueil.fxml"));
                  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                  scene = new Scene(root);
                  stage.setScene(scene);

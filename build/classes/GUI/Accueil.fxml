@@ -19,10 +19,15 @@
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
 <?import javafx.scene.media.MediaView?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane id="AnchorPane" style="-fx-background-color: Black;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AccueilController">
+<AnchorPane id="AnchorPane" style="-fx-background-color: Black;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AccueilController">
     <stylesheets>
         <URL value="@accueil.css" />
     </stylesheets>
@@ -62,7 +67,7 @@
       </MenuButton>
       <SplitPane layoutY="99.0" prefHeight="789.0" prefWidth="1240.0" style="-fx-background-color: Black;">
         <items>
-          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="787.0" prefWidth="1411.0" style="-fx-background-color: black;">
+          <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="500.0" prefWidth="700.0" style="-fx-background-color: black;">
                <children>
                   <TabPane layoutX="5.0" layoutY="4.0" prefHeight="780.0" prefWidth="1224.0" style="-fx-background-color: Gold;" tabClosingPolicy="UNAVAILABLE" tabMinHeight="95.0" tabMinWidth="185.0">
                     <tabs>
@@ -106,9 +111,34 @@
                               <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                            </content>
                         </Tab>
-                        <Tab fx:id="AboonementsPane" style="-fx-background-color: Gold;" text="Abonnements">
+                        <Tab fx:id="AboonementsPane" style="-fx-background-color: Gold;" text="Produit">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="687.0" prefWidth="1224.0">
+                                       <children>
+                                          <Pane prefHeight="114.0" prefWidth="1224.0" style="-fx-background-color: orange;" />
+                                          <ScrollPane prefHeight="659.0" prefWidth="1197.0">
+                                             <content>
+                                                <GridPane fx:id="grid_ab" hgap="200.0" prefHeight="571.0" prefWidth="982.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                             <padding>
+                                                <Insets left="150.0" />
+                                             </padding>
+                                          </ScrollPane>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
                            </content>
                         </Tab>
                         <Tab fx:id="AcitivitéPane1" style="-fx-background-color: gold;" text="Activité">
@@ -121,7 +151,7 @@
                               <AnchorPane fx:id="CoachPanel" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                            </content>
                         </Tab>
-                        <Tab fx:id="AcitivitéPane111" closable="false" style="-fx-background-color: Gold;" text="Reclamation ">
+                        <Tab fx:id="ProduitPane" closable="false" style="-fx-background-color: Gold;" text="Produit">
                            <content>
                               <AnchorPane fx:id="ReclamtionPanel1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                            </content>
@@ -131,6 +161,11 @@
                           <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
                         </content>
                       </Tab>
+                        <Tab fx:id="AcitivitéPane112" style="-fx-background-color: gold;" text="Coach">
+                           <content>
+                              <AnchorPane fx:id="CoachPanel1" minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                           </content>
+                        </Tab>
                     </tabs>
                   </TabPane>
                </children>
