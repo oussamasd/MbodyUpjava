@@ -4,35 +4,41 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/Category.java</file>
+            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/mbodyupjava/FXMain.java</file>
+            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/ReservationProduitController.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/TypeReclamation.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/services/ActivityService.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/services/CategoriesService.java</file>
+            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/style.css</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/Reclamation.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AfficheExerciceController.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/utils/MyDB.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/Reserve.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/services/ProduitService.java</file>
+            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/MehdiMail.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/services/IPersonne.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AfficherReclamationController.java</file>
-            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/ReserveController.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/item_mehdi.fxml</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AjouterCategoriesController.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/Exercice.java</file>
+            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/ReservationProduit.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/services/UserService.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/Produit.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AfficherProduitController.java</file>
+            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/MailMehdi.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/services/ImageActService.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/services/reclamationService.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/services/ReserveService.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/mbodyupjava/MbodyUpjava.java</file>
-            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/Reserve.fxml</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AccueilController.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/entities/Categories.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/ItemController.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AjouterReclamationController.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AfficherCategoriesController.java</file>
+            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/ReservationProduit.fxml</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/services/ExerciceService.java</file>
             <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/src/GUI/AdminDashboardController.java</file>
+            <file>file:/C:/Users/Mehdi%20AZZAZ/Documents/NetBeansProjects/MbodyUpjava/nbproject/build-impl.xml</file>
         </group>
     </open-files>
 </project-private>

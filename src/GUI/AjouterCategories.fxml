@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.lang.String?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
@@ -175,27 +176,35 @@
                   </Label>
                </children>
             </Pane>
-            <Label fx:id="titrepage1" layoutX="313.0" layoutY="167.0" prefHeight="45.0" prefWidth="76.0" text="Nom" textFill="#c7a4a1">
+            <Label fx:id="titrepage1" layoutX="348.0" layoutY="185.0" prefHeight="45.0" prefWidth="76.0" text="Nom" textFill="#c7a4a1">
                <font>
-                  <Font size="32.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="titrepage11" graphicTextGap="1.0" layoutX="313.0" layoutY="298.0" text="desription" textFill="#c7a4a1">
+            <Label fx:id="titrepage11" graphicTextGap="1.0" layoutX="346.0" layoutY="285.0" text="Desription" textFill="#c7a4a1">
                <font>
-                  <Font size="32.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="tnom" layoutX="518.0" layoutY="175.0" prefHeight="31.0" prefWidth="109.0" />
-            <TextField fx:id="tdescription" layoutX="518.0" layoutY="290.0" prefHeight="31.0" prefWidth="125.0" />
-            <Button layoutX="949.0" layoutY="168.0" mnemonicParsing="false" onAction="#BtnAjouterP" prefHeight="25.0" prefWidth="109.0" text="Ajouter" textFill="#e11717">
+            <TextField fx:id="tnom" layoutX="518.0" layoutY="192.0" prefHeight="31.0" prefWidth="125.0" />
+            <TextField fx:id="tdescription" layoutX="518.0" layoutY="283.0" prefHeight="31.0" prefWidth="125.0" />
+            <Button layoutX="949.0" layoutY="168.0" mnemonicParsing="false" onAction="#BtnAjouterP" prefHeight="25.0" prefWidth="109.0" stylesheets="@style.css" text="Ajouter" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font size="18.0" />
                </font>
+               <styleClass>
+                  <String fx:value="add-btnh" />
+                  <String fx:value="add_btn2" />
+               </styleClass>
             </Button>
-            <Button layoutX="941.0" layoutY="305.0" mnemonicParsing="false" onAction="#BtnSuppRec" text="Supprimer" textFill="#e11717">
+            <Button layoutX="948.0" layoutY="298.0" mnemonicParsing="false" onAction="#BtnSuppRec" prefHeight="39.0" prefWidth="109.0" stylesheets="@style.css" text="Supprimer" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font size="18.0" />
                </font>
+               <styleClass>
+                  <String fx:value="add-btnh" />
+                  <String fx:value="add_btn2" />
+               </styleClass>
             </Button>
             <TableView fx:id="tableact" layoutX="295.0" layoutY="365.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="304.0" prefWidth="777.0">
                <columns>
@@ -208,17 +217,21 @@
                   <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
                </columnResizePolicy>
             </TableView>
-            <Button layoutX="949.0" layoutY="234.0" mnemonicParsing="false" onAction="#BtnModifier" text="Modifier" textFill="#e11717">
+            <Button layoutX="949.0" layoutY="234.0" mnemonicParsing="false" onAction="#BtnModifier" prefHeight="39.0" prefWidth="109.0" stylesheets="@style.css" text="Modifier" textFill="WHITE">
                <font>
-                  <Font size="21.0" />
+                  <Font size="18.0" />
                </font>
+               <styleClass>
+                  <String fx:value="add-btnh" />
+                  <String fx:value="add_btn2" />
+               </styleClass>
             </Button>
-            <Label fx:id="titrepage12" layoutX="313.0" layoutY="233.0" prefHeight="45.0" prefWidth="76.0" text="type" textFill="#c7a4a1">
+            <Label fx:id="titrepage12" layoutX="348.0" layoutY="231.0" prefHeight="45.0" prefWidth="76.0" text="Type" textFill="#c7a4a1">
                <font>
-                  <Font size="32.0" />
+                  <Font size="18.0" />
                </font>
             </Label>
-            <TextField fx:id="tnom1" layoutX="518.0" layoutY="241.0" prefHeight="31.0" prefWidth="109.0" />
+            <TextField fx:id="tnom1" layoutX="518.0" layoutY="238.0" prefHeight="31.0" prefWidth="125.0" />
          </children>
       </AnchorPane>
    </children>

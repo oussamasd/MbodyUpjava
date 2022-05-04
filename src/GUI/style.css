@@ -8,7 +8,7 @@
 }
 
 .search-button{
-    -fx-background-color: #828282;
+    -fx-background-color: #FFFFFF;
     -fx-background-radius: 30;
 }
 
@@ -34,6 +34,10 @@
     -fx-background-color: #FFFFFF;
     -fx-background-radius: 100;
 }
+.add-btnh:hover{
+    -fx-background-color: #BAEAC3;
+    -fx-background-radius: 100;
+}
 
 .free-delivery-card{
     -fx-background-color: #D3D3D3;
@@ -54,4 +58,9 @@
 .img{
     border-radius: 40px;
 
+}
+.add_btn2{
+    
+    -fx-background-color:  #345665;
+    -fx-background-radius: 100;
 }
