@@ -6,20 +6,26 @@
 package GUI;
 import entities.Categories;
 import entities.Produit;
+import entities.ReservationProduit;
 import java.io.IOException;
 import java.net.URL;
 import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.geometry.Insets;
+import javafx.scene.Node;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.Tab;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.Region;
 import javafx.scene.media.MediaView;
+import javafx.stage.Stage;
 import services.ProduitService;
 
 /**
@@ -46,8 +52,6 @@ public class AccueilController implements Initializable {
     @FXML
     private AnchorPane CoachPanel;
     @FXML
-    private AnchorPane ReclamtionPanel1;
-    @FXML
     private Tab ProcductsPane;
     @FXML
     private Tab ProduitPane;
@@ -55,6 +59,8 @@ public class AccueilController implements Initializable {
     private Tab AcitivitéPane112;
     @FXML
     private AnchorPane CoachPanel1;
+    @FXML
+    private GridPane grid_ab1;
 
     /**
      * Initializes the controller class.
@@ -91,16 +97,16 @@ public class AccueilController implements Initializable {
                            row++;
                        }
                        
-                       grid_ab.add(anchorPane, column++, row); //(child,column,row)
+                       grid_ab1.add(anchorPane, column++, row); //(child,column,row)
                        //set grid width
-                       grid_ab.setMinWidth(Region.USE_COMPUTED_SIZE);
-                       grid_ab.setPrefWidth(Region.USE_COMPUTED_SIZE);
-                       grid_ab.setMaxWidth(Region.USE_PREF_SIZE);
+                       grid_ab1.setMinWidth(Region.USE_COMPUTED_SIZE);
+                       grid_ab1.setPrefWidth(Region.USE_COMPUTED_SIZE);
+                       grid_ab1.setMaxWidth(Region.USE_PREF_SIZE);
                        
                        //set grid height
-                       grid_ab.setMinHeight(Region.USE_COMPUTED_SIZE);
-                       grid_ab.setPrefHeight(Region.USE_COMPUTED_SIZE);
-                       grid_ab.setMaxHeight(Region.USE_PREF_SIZE);
+                       grid_ab1.setMinHeight(Region.USE_COMPUTED_SIZE);
+                       grid_ab1.setPrefHeight(Region.USE_COMPUTED_SIZE);
+                       grid_ab1.setMaxHeight(Region.USE_PREF_SIZE);
                        
                        GridPane.setMargin(anchorPane, new Insets(30));
                    } 
@@ -113,5 +119,24 @@ public class AccueilController implements Initializable {
             
         }
     }
+
+    @FXML
+    private void goRes(ActionEvent event) {
+         {
+         try{
+               
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/ReservationProduit.fxml"));
+                 
+                Stage stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 Scene scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
+        
+         }}
     
 }

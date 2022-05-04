@@ -90,6 +90,16 @@ public class Produit {
         
     }
 
+    @Override
+    public String toString() {
+        return "Produit{" + "id=" + id + ", nom=" + nom + ", prix=" + prix + ", quantite=" + quantite + ", photo=" + photo + ", cat_id=" + cat_id + '}';
+    }
+    
+    public String Sres()
+    {
+        return "Nom : "+nom+"\n prix :"+prix+"" ;
+    }
+
    
     
     

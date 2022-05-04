@@ -5,6 +5,10 @@
  */
 package mbodyupjava;
 
+import com.google.zxing.BarcodeFormat;
+import com.google.zxing.WriterException;
+import com.google.zxing.common.BitMatrix;
+import com.google.zxing.qrcode.QRCodeWriter;
 import java.io.IOException;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -12,6 +16,14 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
+import entities.MehdiMail;
+import java.awt.Color;
+import java.awt.Graphics2D;
+import java.awt.image.BufferedImage;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javafx.embed.swing.SwingFXUtils;
+import javafx.scene.image.ImageView;
 
 /**
  *
@@ -30,7 +42,19 @@ public class FXMain extends Application {
             Scene scene = new Scene(parent);
             stage.setTitle("MbodyUP");
             stage.setScene(scene);
-            stage.show();
+
+ 
+           stage.show();
+            
+            
+           
+//           MehdiMail.send(
+//    "mehdi.azzaz@esprit.tn",
+//    "nosforever24552201",
+//    "mehdi.azzaz20@gmail.com",
+//    "Bienvenu sur WayToLearnX",
+//    "mail de test!"
+//  );
             
         } catch (IOException ex) {
             System.out.println(ex.getMessage());

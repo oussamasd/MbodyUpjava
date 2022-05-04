@@ -10,6 +10,7 @@ import entities.Categories;
 
 import entities.Activitie;
 import entities.ImageAct;
+import entities.ReservationProduit;
 import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
@@ -51,7 +52,7 @@ public class ItemController  {
     private Label descact;
     
     
-    Activitie ac ;
+    Produit ac ;
     private Label prixab;
     @FXML
     private Label tnom;
@@ -65,7 +66,7 @@ public class ItemController  {
     
     
    public void safe(Produit act){
-       
+       ac = act;
        tnom.setText(act.getNom());
        
        prix.setText(String.valueOf(act.getPrix()));
@@ -107,7 +108,8 @@ public class ItemController  {
     @FXML
     private void réserve(ActionEvent event) {
          try{
-                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/Reserve.fxml"));
+                ReservationProduit.lp.add(ac);
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/ReservationProduit.fxml"));
                  stage = (Stage)((Node)event.getSource()).getScene().getWindow();
                  scene = new Scene(root);
                  stage.setScene(scene);
