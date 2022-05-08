@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane id="AnchorPane" prefHeight="670.0" prefWidth="1071.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Gestion_de_entreneurGUIController">
+   <children>
+      <VBox prefHeight="669.0" prefWidth="295.0" style="-fx-background-color: #345765;" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Pane prefHeight="126.0" prefWidth="278.0">
+               <children>
+                  <Text fontSmoothingType="LCD" layoutX="14.0" layoutY="40.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Dashboard Admin ">
+                     <font>
+                        <Font name="Arial" size="24.0" />
+                     </font>
+                  </Text>
+                  <Text fill="#d9acac" layoutX="168.0" layoutY="81.0" strokeType="OUTSIDE" strokeWidth="0.0" text="MBodyUp" wrappingWidth="89.08380126953125">
+                     <font>
+                        <Font name="Bernard MT Condensed" size="18.0" />
+                     </font>
+                  </Text>
+               </children></Pane>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goAccueil" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Accueil" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goUser" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="User" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font></Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goActivite" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Activity" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goExercice" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Exercice" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goAbonnement" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Abonnement" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goOffer" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Offre" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goProduit" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Produit" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goCAtmehdi" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Category Produit" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goReclamation" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Reclamation" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goTypeReclamation" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Type Reclamation" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goEntraineur" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Entraineur" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+            <Button id="button" alignment="BASELINE_LEFT" mnemonicParsing="false" onAction="#goCatAymen" prefHeight="45.0" prefWidth="278.0" stylesheets="@DashCss.css" text="Category Entraineur" textFill="WHITE">
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+               <padding>
+                  <Insets left="50.0" />
+               </padding>
+               <font>
+                  <Font size="16.0" />
+               </font>
+            </Button>
+         </children>
+      </VBox>
+      <Pane fx:id="addbutton" layoutX="294.0" layoutY="24.0" prefHeight="134.0" prefWidth="777.0" style="-fx-background-color: #345665;" AnchorPane.leftAnchor="294.0" AnchorPane.rightAnchor="0.0">
+         <children>
+            <Label fx:id="titrepage" layoutX="36.0" layoutY="44.0" text="Entreneur" textFill="#c9a1a1">
+               <font>
+                  <Font size="32.0" />
+               </font>
+            </Label>
+         </children></Pane>
+      <TabPane layoutX="295.0" layoutY="164.0" prefHeight="422.0" prefWidth="730.0" tabClosingPolicy="UNAVAILABLE">
+         <tabs>
+            <Tab text="Categorie">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <Button fx:id="b_Modifer_categorie" layoutX="342.0" layoutY="70.0" mnemonicParsing="false" onAction="#c_modifer" prefHeight="25.0" prefWidth="69.0" text="Modifer" />
+                        <Button fx:id="b_supprimer_categ" layoutX="341.0" layoutY="30.0" mnemonicParsing="false" onMouseClicked="#supp_categ" text="Supprimer" />
+                        <Label layoutX="51.0" layoutY="39.0" text="Types" />
+                        <Label layoutX="51.0" layoutY="79.0" prefHeight="17.0" prefWidth="95.0" text="tranche de age " />
+                        <TextField fx:id="type_categorie" layoutX="146.0" layoutY="32.0" />
+                        <TextField fx:id="tag_categorie" layoutX="146.0" layoutY="74.0" />
+                        <TableView fx:id="categorie_table" layoutX="52.0" layoutY="161.0" onMouseClicked="#c_select" prefHeight="185.0" prefWidth="491.0">
+                           <columns>
+                              <TableColumn fx:id="c_affiche_id" prefWidth="75.0" text="ID" />
+                              <TableColumn fx:id="c_affiche_type" prefWidth="86.0" text="Type" />
+                              <TableColumn fx:id="c_affiche_tag" prefWidth="118.0" text="Tranche d'age " />
+                           </columns>
+                        </TableView>
+                        <Button fx:id="b_ajouter_categorie" layoutX="342.0" layoutY="112.0" mnemonicParsing="false" onAction="#add_categ" prefHeight="25.0" prefWidth="69.0" text="Ajouter" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+            <Tab text="entreneur">
+               <content>
+                  <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <TableView fx:id="entreneur_table" layoutX="21.0" layoutY="129.0" onMouseClicked="#e_select" prefHeight="200.0" prefWidth="542.0">
+                           <columns>
+                              <TableColumn fx:id="id_affiche_table" prefWidth="45.0" text="ID" />
+                              <TableColumn fx:id="nom_affiche_table" prefWidth="79.0" text="Nom" />
+                              <TableColumn fx:id="prenom__affiche_table" prefWidth="84.0" text="Prenom" />
+                              <TableColumn fx:id="age_affiche_table" prefWidth="63.0" text="Age" />
+                              <TableColumn fx:id="type_affiche_table" prefWidth="81.0" text="Type" />
+                              <TableColumn fx:id="numero_affiche_table" prefWidth="129.0" text="numero category" />
+                              <TableColumn fx:id="image_affiche_table" prefWidth="60.0" text="image" />
+                           </columns>
+                        </TableView>
+                        <Label layoutX="21.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" text="Nom :" />
+                        <Label layoutX="21.0" layoutY="40.0" prefHeight="17.0" prefWidth="52.0" text="Prenom :" />
+                        <Label layoutX="21.0" layoutY="66.0" prefHeight="17.0" prefWidth="52.0" text="Age :" />
+                        <TextField fx:id="e_nom" layoutX="73.0" layoutY="10.0" />
+                        <TextField fx:id="e_prenom" layoutX="73.0" layoutY="36.0" />
+                        <TextField fx:id="e_age" layoutX="73.0" layoutY="62.0" />
+                        <TextField fx:id="e_type" layoutX="331.0" layoutY="10.0" />
+                        <TextField fx:id="e_categnum" layoutX="331.0" layoutY="36.0" />
+                        <TextField fx:id="e_image" layoutX="331.0" layoutY="62.0" />
+                        <Label layoutX="228.0" layoutY="14.0" prefHeight="17.0" prefWidth="52.0" text="Type :" />
+                        <Label layoutX="228.0" layoutY="40.0" prefHeight="17.0" prefWidth="100.0" text="numero category :" />
+                        <Label layoutX="228.0" layoutY="66.0" prefHeight="17.0" prefWidth="85.0" text="images :" />
+                        <Button fx:id="b_ajouter_entreneur" layoutX="495.0" layoutY="10.0" mnemonicParsing="false" onAction="#add_entreneur" prefHeight="25.0" prefWidth="77.0" text="Ajouter" />
+                        <Button fx:id="e_b_modifer" layoutX="495.0" layoutY="36.0" mnemonicParsing="false" onAction="#modifer_entreneur" prefHeight="25.0" prefWidth="76.0" text="Modifer" />
+                        <Button layoutX="494.0" layoutY="62.0" mnemonicParsing="false" onMouseClicked="#b_supprimer_entreneur" prefHeight="25.0" prefWidth="78.0" text="Supprimer" />
+                        <ImageView fx:id="a_picture_kol" fitHeight="117.0" fitWidth="112.0" layoutX="590.0" layoutY="94.0" onDragDetected="#Import" pickOnBounds="true" preserveRatio="true" />
+                        <Button fx:id="B_import" layoutX="494.0" layoutY="94.0" mnemonicParsing="false" onAction="#h_importpath" prefHeight="25.0" prefWidth="80.0" text="Import" />
+                        <Button fx:id="stat" layoutX="603.0" layoutY="62.0" mnemonicParsing="false" onAction="#Statistique" text="statistique" />
+                        <Button fx:id="b_qrcode" layoutX="603.0" layoutY="36.0" mnemonicParsing="false" onMouseClicked="#e_shareQR" prefHeight="25.0" prefWidth="71.0" text="QR code " />
+                        <TextField fx:id="e_recherche_qr" layoutX="602.0" layoutY="10.0" prefHeight="25.0" prefWidth="75.0" />
+                        <Button fx:id="b_tri" layoutX="606.0" layoutY="240.0" mnemonicParsing="false" onAction="#TRI" prefHeight="25.0" prefWidth="83.0" text="TRI" />
+                        <ComboBox fx:id="comboboxTYpe" layoutX="602.0" layoutY="164.0" prefHeight="25.0" prefWidth="89.0" />
+                        <ComboBox fx:id="DESCASC" layoutX="602.0" layoutY="199.0" prefHeight="25.0" prefWidth="89.0" />
+                     </children>
+                  </AnchorPane>
+               </content>
+            </Tab>
+         </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

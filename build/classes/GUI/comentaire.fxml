@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="101.0" prefWidth="459.0" styleClass="chosen-fruit-card" stylesheets="@style.css" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.ComentaireController">
+   <children>
+      <ImageView fitHeight="31.0" fitWidth="27.0" layoutX="14.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true" styleClass="img">
+         <image>
+            <Image url="@../img/cc.png" />
+         </image>
+      </ImageView>
+      <Label fx:id="username" layoutX="66.0" layoutY="21.0" text="name" />
+      <Label fx:id="cmnt" layoutX="12.0" layoutY="58.0" prefHeight="18.0" prefWidth="439.0" text="Label" />
+      <Label fx:id="dt" layoutX="184.0" layoutY="21.0" prefHeight="18.0" prefWidth="107.0" text="date" />
+   </children>
+</AnchorPane>

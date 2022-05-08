@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.SettingsController">
+   <children>
+      <MediaView fx:id="mv" fitHeight="200.0" fitWidth="200.0" layoutX="200.0" layoutY="100.0" style="-fx-scale-x: 3; -fx-scale-y: 4;" />
+      <AnchorPane layoutX="82.0" layoutY="59.0" prefHeight="282.0" prefWidth="436.0" style="-fx-background-color: Gold;">
+         <children>
+            <Label layoutX="116.0" layoutY="21.0" prefHeight="27.0" prefWidth="235.0" text="Verifier Votre Mail">
+               <font>
+                  <Font name="Arial Narrow Bold Italic" size="23.0" />
+               </font>
+            </Label>
+            <TextField fx:id="txt_Email" layoutX="35.0" layoutY="61.0" prefHeight="35.0" prefWidth="379.0" promptText="Your Email" styleClass="txtUsername" stylesheets="@../Styling/login.css">
+               <font>
+                  <Font name="Arial Narrow Bold" size="12.0" />
+               </font>
+            </TextField>
+            <Button layoutX="118.0" layoutY="108.0" mnemonicParsing="false" onMouseClicked="#Send" prefHeight="25.0" prefWidth="200.0" stylesheets="@../Styling/login.css" text="Send">
+               <font>
+                  <Font name="Arial Narrow Bold Italic" size="12.0" />
+               </font>
+            </Button>
+            <Label layoutX="101.0" layoutY="189.0" prefHeight="27.0" prefWidth="235.0" text="Double Sms Verfication">
+               <font>
+                  <Font name="Arial Narrow Bold Italic" size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="MessageVerified" layoutX="73.0" layoutY="141.0" prefHeight="27.0" prefWidth="186.0" text="Your  mail has been verified">
+               <font>
+                  <Font name="Arial Narrow Bold Italic" size="16.0" />
+               </font>
+            </Label>
+            <CheckBox fx:id="checkverified" disable="true" layoutX="272.0" layoutY="146.0" mnemonicParsing="false" selected="true" />
+            <CheckBox fx:id="CheckSMS" layoutX="210.0" layoutY="226.0" mnemonicParsing="false" onAction="#verifieSMShhhh" />
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

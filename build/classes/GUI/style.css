@@ -49,3 +49,18 @@
     -fx-background-color: #FFFFFF;
         -fx-background-radius: 30;
 }
+
+
+.img{
+    border-radius: 40px;
+
+}
+.add_btn2{
+    
+    -fx-background-color:  #345665;
+    -fx-background-radius: 100;
+}
+.add-btnh:hover{
+    -fx-background-color: #BAEAC3;
+    -fx-background-radius: 100;
+}

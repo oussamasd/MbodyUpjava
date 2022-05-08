@@ -6,6 +6,7 @@
 package GUI;
 
 import entities.Activitie;
+import entities.Category;
 import java.awt.Button;
 import java.io.IOException;
 import java.net.URL;
@@ -32,10 +33,12 @@ import java.time.format.DateTimeFormatter;
 import java.time.format.TextStyle;
 import java.util.Locale;
 import java.time.DayOfWeek;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import services.ActivityService;
+import services.CatService;
 
 /**
  * FXML Controller class
@@ -78,10 +81,14 @@ public class AdminDashboardController implements Initializable {
      
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-        // TODO
-        System.out.println("lool");
-        iniLineChart();
-        piec();
+        try {
+            // TODO
+            System.out.println("lool");
+            iniLineChart();
+            piec();
+        } catch (SQLException ee) {
+            System.out.println(ee);
+        }
     }
     private void addAct(ActionEvent event) { 
        // FXMLLoader loader = new FXMLLoader(getClass().getResource("/gui/AjouterPFXML.fxml"));
@@ -133,45 +140,130 @@ public class AdminDashboardController implements Initializable {
     }
         @FXML
     private void goUser(ActionEvent event) {
-        titrepage.setText("goUser");
+              try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/back_User.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
+      
      
     }
      @FXML
     private void goAbonnement(ActionEvent event) {
-        titrepage.setText("goAbonnement");
+            try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficherAbonne.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
       
      
     }
         @FXML
     private void goOffer(ActionEvent event) {
-        titrepage.setText("goOffer");
+           try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficherOffre.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
      
     }
      @FXML
     private void goProduit(ActionEvent event) {
-        titrepage.setText("goProduit");
+        try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficherProduit.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        
+    }
       
      
     }
         @FXML
     private void goCAtmehdi(ActionEvent event) {
-        titrepage.setText("goCAtmehdi");
+           
+          try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficherCategories.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        
+    }
      
     }
      @FXML
     private void goReclamation(ActionEvent event) {
-        titrepage.setText("goReclamation");
+         try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficherReclamation.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
       
      
     }
         @FXML
     private void goTypeReclamation(ActionEvent event) {
-        titrepage.setText("goTypeReclamation");
+           try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/AfficherTypeRec.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+      
+     
+    }
      
     }
      @FXML
     private void goEntraineur(ActionEvent event) {
-        titrepage.setText("goEntraineur");
+         try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/Gestion_de_entreneurGUI.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
       
      
     }
@@ -219,6 +311,8 @@ public class AdminDashboardController implements Initializable {
                 LocalDate date = LocalDate.parse(dt, formatter); // LocalDate = 2010-02-23
                 DayOfWeek dow = date.getDayOfWeek();  // Extracts a `DayOfWeek` enum object.
                  String output = dow.getDisplayName(TextStyle.SHORT, Locale.US);
+                 String aa = dow.getDisplayName(TextStyle.FULL, Locale.US);
+                
                  if(output.equals("Mon")){mon+=actS.countparticipation(a.getId());}
                  if(output.equals("Tue")){tu+=actS.countparticipation(a.getId());}
                  if(output.equals("Wed")){we+=actS.countparticipation(a.getId());}
@@ -255,16 +349,18 @@ public class AdminDashboardController implements Initializable {
     
     
     }
-    private void piec(){
-    
+    private void piec() throws SQLException{
+        CatService catS = new CatService();
+        List<Category> lc = catS.affichercat();
+        List<PieChart.Data> lp =new ArrayList();
+        for(Category c :lc){
+            if(catS.countCat(c.getId())!=0){
+            lp.add(new PieChart.Data(c.getNom_Cat(),catS.countCat(c.getId())));
+            }
+        }
         ObservableList<PieChart.Data> pieChartData = FXCollections.observableArrayList(
         
-                new PieChart.Data("and",15),
-                new PieChart.Data("agga",5),
-                new PieChart.Data("hhh",20),
-                new PieChart.Data("bb",22),
-                new PieChart.Data("bbvv",71),
-                new PieChart.Data("ada",101)
+              lp
                 
         
         
@@ -272,6 +368,21 @@ public class AdminDashboardController implements Initializable {
         pieChart.setData(pieChartData);
         
     
+    }
+
+    @FXML
+    private void gofront(ActionEvent event) {
+          try{
+                 Parent root  = FXMLLoader.load(getClass().getResource("/gui/Accueil.fxml"));
+                 stage = (Stage)((Node)event.getSource()).getScene().getWindow();
+                 scene = new Scene(root);
+                 stage.setScene(scene);
+                 stage.show();
+
+        }catch(IOException ex){
+            System.out.println(ex);
+        
+        }
     }
    
     

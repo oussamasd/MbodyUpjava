@@ -11,6 +11,7 @@ import java.io.File;
 import java.io.IOException;
 import java.net.MalformedURLException;
 import java.net.URL;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
@@ -26,8 +27,11 @@ import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
+import org.controlsfx.control.Rating;
+import services.ActivityService;
 
 /**
  * FXML Controller class
@@ -53,11 +57,34 @@ public class ItemController  {
     private Label descact;
     
     Activitie ac ;
+    @FXML
+    private HBox rateHbox;
+    
+    Rating r = new Rating();
+    
+    ActivityService actS = new ActivityService();
+    @FXML
+    private HBox hbb;
+    Label l = new Label();
 
     
     
-   public void safe(Activitie act){
+   public void safe(Activitie act) throws SQLException{
        ac=act;
+       
+       int a = Integer.parseInt(actS.countrate(act.getId()).split("_")[0]);
+       int b = Integer.parseInt(actS.countrate(act.getId()).split("_")[1]);
+       float c=0;
+       if(b!=0){
+           c=a/b;
+       }
+       l.setText((double)c +"/5");
+       //float c = a/b;
+       r.setRating((double)c);
+       r.setDisable(true);
+       hbb.getChildren().add(r);
+        hbb.getChildren().add(l);
+       
        nomAct.setText(act.getNom_Act());
        dtact.setText(act.getDate_Act());
        catact.setText(act.getCategory().getNom_Cat());

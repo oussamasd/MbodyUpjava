@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.media.MediaView?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="546.0" prefWidth="824.0" style="-fx-background-color: gray;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.LoginController">
+    <stylesheets>
+        <URL value="@/Styling/login.css" />
+    </stylesheets>
+   <children>
+      <Separator layoutX="464.0" layoutY="395.0" prefHeight="3.0" prefWidth="304.0" />
+      <Separator layoutX="462.0" layoutY="457.0" prefHeight="3.0" prefWidth="304.0" />
+      <TextField fx:id="txtUsername" layoutX="460.0" layoutY="253.0" prefHeight="40.0" prefWidth="304.0" promptText="Username" styleClass="txtUsername" stylesheets="@../Styling/login.css">
+         <font>
+            <Font name="Arial Narrow" size="19.0" />
+         </font>
+      </TextField>
+      <Label layoutX="602.0" layoutY="390.0" text="Or" />
+      <Label layoutX="602.0" layoutY="450.0" text="Or" />
+      <Button fx:id="btnSignIn" layoutX="459.0" layoutY="354.0" mnemonicParsing="false" onMouseClicked="#handleButtonAction" prefHeight="36.0" prefWidth="304.0" stylesheets="@../Styling/login.css" text="Sign in" textAlignment="CENTER" textFill="#0d0000">
+         <font>
+            <Font name="Arial Narrow Bold Italic" size="19.0" />
+         </font>
+      </Button>
+      <Button fx:id="btnSignUp" layoutX="462.0" layoutY="407.0" mnemonicParsing="false" onAction="#getSignUpView" onMouseClicked="#getSignUpView" prefHeight="36.0" prefWidth="298.0" stylesheets="@../Styling/login.css" text="Sign up">
+         <font>
+            <Font name="Arial Narrow Bold Italic" size="19.0" />
+         </font>
+      </Button>
+      <AnchorPane prefHeight="546.0" prefWidth="425.0" style="-fx-background-color: GOld;">
+         <children>
+            <MediaView fx:id="mediaView" fitHeight="240.0" fitWidth="425.0" nodeOrientation="INHERIT">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor></MediaView>
+            <Label layoutX="97.0" layoutY="204.0" prefHeight="124.0" prefWidth="231.0" text="MBODYUP" textFill="#1e1d1d">
+               <font>
+                  <Font name="Gill Sans MT" size="44.0" />
+               </font>
+            </Label>
+            <MediaView fx:id="mv" fitHeight="240.0" fitWidth="425.0" layoutY="306.0" nodeOrientation="INHERIT">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+            </MediaView>
+         </children>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </AnchorPane>
+      <Label fx:id="lbl_close" layoutX="777.0" layoutY="14.0" prefHeight="45.0" prefWidth="41.0" text="X" textFill="DARKBLUE">
+         <font>
+            <Font name="System Bold" size="15.0" />
+         </font>
+      </Label>
+      <Label fx:id="lblErrors" layoutX="459.0" layoutY="171.0" prefHeight="21.0" prefWidth="304.0" textFill="#ff5200" />
+      <Label fx:id="forgot" layoutX="559.0" layoutY="467.0" onMouseClicked="#getForgot" prefHeight="34.0" prefWidth="239.0" style="-fx-text-fill: #0C3988;" text="Foreget password" textAlignment="CENTER">
+         <font>
+            <Font name="Arial Narrow" size="18.0" />
+         </font>
+      </Label>
+      <CheckBox fx:id="show_password_login" layoutX="768.0" layoutY="314.0" mnemonicParsing="false" onAction="#show_password_login" prefHeight="18.0" prefWidth="26.0" textFill="WHITE" />
+      <PasswordField fx:id="txtPassword" layoutX="459.0" layoutY="305.0" prefHeight="31.0" prefWidth="304.0" promptText="Password" styleClass="txtUsername" stylesheets="@../Styling/login.css">
+         <font>
+            <Font name="Arial Narrow" size="19.0" />
+         </font></PasswordField>
+      <TextField fx:id="show_password_a_login" layoutX="460.0" layoutY="305.0" prefHeight="34.0" prefWidth="304.0" promptText="Passowrd" styleClass="txtUsername" stylesheets="@../Styling/login.css">
+         <font>
+            <Font name="Arial Narrow" size="19.0" />
+         </font>
+      </TextField>
+   </children>
+</AnchorPane>

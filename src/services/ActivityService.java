@@ -199,7 +199,7 @@ public class ActivityService  {
     return last;
     }
       
-         public void participe(Rate r) throws SQLException {
+         public void participeRate(Rate r) throws SQLException {
         
         String req = "INSERT INTO `rating` (`rate`, `id_activity_id`, `iduser_id`) "
                 + "VALUES ( ?, ?,?) ";
@@ -226,4 +226,56 @@ public class ActivityService  {
     
     return last;
     }   
+       
+       public Boolean isParticipated(int idact , int iduser ) throws SQLException{
+   
+     String req = "select * from activity_user where activity_id='"+idact+"' and user_id ='"+iduser+"'";
+        
+        stm = connexion.createStatement();
+        //ensemble de resultat
+        ResultSet rst = stm.executeQuery(req);
+        while (rst.next()) {
+        return true;
+            
+        
+        }
+    
+    return false;
+    }  
+       
+         public void participeAct(int idact , int iduser) throws SQLException {
+        
+        String req = "INSERT INTO `activity_user` (`activity_id`, `user_id`) "
+                + "VALUES ( ?, ?) ";
+        PreparedStatement ps = connexion.prepareStatement(req);
+        ps.setInt(1, idact);
+        ps.setInt(2, iduser);
+        
+        
+        ps.executeUpdate();
+         }
+         //SELECT SUM(rate),COUNT(iduser_id) FROM `rating` WHERE id_activity_id =94
+
+         public String countrate(int idact  ) throws SQLException{
+    String last = "";
+    int a =0;
+    int b = 0;
+     String req = "SELECT SUM(rate),COUNT(iduser_id) FROM `rating` WHERE id_activity_id ="+idact;
+        
+        stm = connexion.createStatement();
+        //ensemble de resultat
+        ResultSet rst = stm.executeQuery(req);
+        while (rst.next()) {
+            if(rst.getInt("COUNT(iduser_id)")!=0){
+                a=rst.getInt("SUM(rate)");
+                b=rst.getInt("COUNT(iduser_id)");
+            }
+        
+            
+        
+        }
+        last=a+"_"+b;
+    
+    return last;
+    } 
 }

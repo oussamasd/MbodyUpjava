@@ -3,6 +3,7 @@
 <?import java.net.URL?>
 <?import javafx.geometry.Insets?>
 <?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.MenuButton?>
 <?import javafx.scene.control.MenuItem?>
@@ -17,7 +18,6 @@
 <?import javafx.scene.effect.MotionBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
-<?import javafx.scene.input.KeyCodeCombination?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
@@ -47,12 +47,8 @@
       </Label>
       <MenuButton layoutX="1111.0" layoutY="39.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="129.0" style="-fx-background-color: gold;" text="Connecté" textAlignment="CENTER">
         <items>
-          <MenuItem style="-fx-background-color: gold;" text="Profile" />
-          <MenuItem style="-fx-background-color: gold;" text="Settings">
-               <accelerator>
-                  <KeyCodeCombination alt="UP" code="ACCEPT" control="UP" meta="UP" shift="UP" shortcut="DOWN" />
-               </accelerator>
-            </MenuItem>
+          <MenuItem fx:id="profilee" onAction="#Profilebtn" style="-fx-background-color: gold;" text="Profile" />
+          <MenuItem fx:id="setingss" onAction="#settingsbtn" style="-fx-background-color: gold;" text="Settings" />
             <MenuItem mnemonicParsing="false" style="-fx-background-color: gold;" text="Reclamation" />
         </items>
          <font>
@@ -106,14 +102,68 @@
                               </ScrollPane>
                         </content>
                       </Tab>
-                        <Tab fx:id="PffresPane" style="-fx-background-color: Gold;" text="Offres ">
+                        <Tab fx:id="PffresPane" style="-fx-background-color: Gold;" text="Produits">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="687.0" prefWidth="1224.0">
+                                       <children>
+                                          <Pane prefHeight="114.0" prefWidth="1224.0" style="-fx-background-color: orange;">
+                                             <children>
+                                                <Button layoutX="1010.0" layoutY="20.0" mnemonicParsing="false" onAction="#goRes" prefHeight="31.0" prefWidth="156.0" styleClass="add-btn" stylesheets="@../../../mehdi/MbodyUpjava/src/GUI/style.css" text="Mes reservation" />
+                                             </children>
+                                          </Pane>
+                                          <ScrollPane prefHeight="659.0" prefWidth="1197.0">
+                                             <content>
+                                                <GridPane fx:id="grid_ab1" hgap="200.0" prefHeight="571.0" prefWidth="982.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                             <padding>
+                                                <Insets left="150.0" />
+                                             </padding>
+                                          </ScrollPane>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
                            </content>
                         </Tab>
                         <Tab fx:id="AboonementsPane" style="-fx-background-color: Gold;" text="Abonnements">
                            <content>
-                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" />
+                              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                                 <children>
+                                    <VBox prefHeight="687.0" prefWidth="1224.0">
+                                       <children>
+                                          <Pane prefHeight="114.0" prefWidth="1224.0" style="-fx-background-color: orange;" />
+                                          <ScrollPane prefHeight="659.0" prefWidth="1197.0">
+                                             <content>
+                                                <GridPane fx:id="grid_ab" hgap="200.0" prefHeight="571.0" prefWidth="982.0">
+                                                   <columnConstraints>
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                                                   </columnConstraints>
+                                                   <rowConstraints>
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                                                   </rowConstraints>
+                                                </GridPane>
+                                             </content>
+                                             <padding>
+                                                <Insets left="150.0" />
+                                             </padding>
+                                          </ScrollPane>
+                                       </children>
+                                    </VBox>
+                                 </children></AnchorPane>
                            </content>
                         </Tab>
                         <Tab fx:id="AcitivitéPane1" style="-fx-background-color: orange;" text="Activité">

@@ -60,6 +60,18 @@ public class CatService {
               }
         return p;
     }
+           public int countCat(int idcat) throws SQLException {
+        int cnt = 0;
+        String req = "select count(*) from activity where category_id="+idcat;
+        stm = connexion.createStatement();
+        //ensemble de resultat
+        ResultSet rst = stm.executeQuery(req);
+
+        while (rst.next()) {
+           cnt = rst.getInt("count(*)");
+        }
+        return cnt;
+    }
 
     
 }
